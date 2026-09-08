@@ -3716,27 +3716,27 @@ font-family: Archivo;
         /* Tablet (~723px): force desktop toggle sizing */
         @media (max-width: 768px) and (min-width: 721px) {
             .toggle-switch {
-                width: 80px !important;
-                height: 40px !important;
-                min-width: 80px !important;
+                width: 64px !important;
+                height: 32px !important;
+                min-width: 64px !important;
             }
             .toggle-switch .slider {
-                width: 80px !important;
-                height: 40px !important;
+                width: 64px !important;
+                height: 32px !important;
                 border-radius: 99px !important;
             }
             .toggle-switch .slider:before {
-                width: 32px !important;
-                height: 32px !important;
-                left: 4px !important;
-                bottom: 4px !important;
+                width: 26px !important;
+                height: 26px !important;
+                left: 3px !important;
+                bottom: 3px !important;
                 border-radius: 50% !important;
             }
             .toggle-switch input:checked + .slider {
                 background-color: #01CE9C !important;
             }
             .toggle-switch input:checked + .slider:before {
-                left: calc(100% - 32px - 2px) !important;
+                left: calc(100% - 26px - 3px) !important;
                 transform: translateX(0) !important;
             }
         }
@@ -5361,16 +5361,12 @@ font-family: Archivo;
                 }
                 /* Hide scrollbar on panel and main content – panel gets overflow-y:auto in some media queries and becomes scroll container */
                 .accessbit-widget-panel,
-                .accessbit-widget-panel > .white-content-section,
-                .accessbit-widget-panel .accessbit-panel-screenshot > .white-content-section,
                 .accessbit-widget-panel > .accessbit-widget-content,
                 .accessbit-widget-panel > .panel-content {
                     scrollbar-width: none !important;
                     -ms-overflow-style: none !important;
                 }
                 .accessbit-widget-panel::-webkit-scrollbar,
-                .accessbit-widget-panel > .white-content-section::-webkit-scrollbar,
-                .accessbit-widget-panel .accessbit-panel-screenshot > .white-content-section::-webkit-scrollbar,
                 .accessbit-widget-panel > .accessbit-widget-content::-webkit-scrollbar,
                 .accessbit-widget-panel > .panel-content::-webkit-scrollbar {
                     display: none !important;
@@ -5397,12 +5393,12 @@ font-family: Archivo;
                 }
                 /* Do NOT style scrollbars for panel content – was causing visible scrollbar on Accessibility Profiles, Color Adjustments, Interface Controls. Hide only. */
                 /* Universal: hide scrollbar on ANY element inside panel (catches shared scroll container for all sections) */
-                .accessbit-widget-panel * {
+                .accessbit-widget-panel *:not(.white-content-section) {
                     scroll-behavior: auto !important;
                     scrollbar-width: none !important;
                     -ms-overflow-style: none !important;
                 }
-                .accessbit-widget-panel *::-webkit-scrollbar {
+                .accessbit-widget-panel *:not(.white-content-section)::-webkit-scrollbar {
                     display: none !important;
                     width: 0 !important;
                     height: 0 !important;
