@@ -11004,34 +11004,31 @@ input:checked + .slider::after {
                     }
                 }
 
-                /* SLIM SCROLLBAR — must be last to override all hide-scrollbar rules above */
-                .accessbit-widget-panel .white-content-section,
-                .accessbit-widget-panel .accessbit-widget-content,
-                .accessbit-widget-panel .panel-content,
-                .accessbit-panel-screenshot {
+                /* SLIM SCROLLBAR — ID selector beats .accessbit-hide-scrollbar class set by JS */
+                #accessbit-widget-panel .white-content-section,
+                #accessbit-widget-panel .accessbit-widget-content,
+                #accessbit-widget-panel .panel-content {
                     scrollbar-width: thin !important;
-                    scrollbar-color: rgba(0,0,0,0.28) transparent !important;
+                    scrollbar-color: rgba(0,0,0,0.3) transparent !important;
+                    overflow-y: auto !important;
                 }
-                .accessbit-widget-panel .white-content-section::-webkit-scrollbar,
-                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar,
-                .accessbit-widget-panel .panel-content::-webkit-scrollbar,
-                .accessbit-panel-screenshot::-webkit-scrollbar {
+                #accessbit-widget-panel .white-content-section::-webkit-scrollbar,
+                #accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar,
+                #accessbit-widget-panel .panel-content::-webkit-scrollbar {
                     display: block !important;
                     width: 4px !important;
                     visibility: visible !important;
                     background: transparent !important;
                 }
-                .accessbit-widget-panel .white-content-section::-webkit-scrollbar-track,
-                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar-track,
-                .accessbit-widget-panel .panel-content::-webkit-scrollbar-track,
-                .accessbit-panel-screenshot::-webkit-scrollbar-track {
+                #accessbit-widget-panel .white-content-section::-webkit-scrollbar-track,
+                #accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar-track,
+                #accessbit-widget-panel .panel-content::-webkit-scrollbar-track {
                     background: transparent !important;
                 }
-                .accessbit-widget-panel .white-content-section::-webkit-scrollbar-thumb,
-                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar-thumb,
-                .accessbit-widget-panel .panel-content::-webkit-scrollbar-thumb,
-                .accessbit-panel-screenshot::-webkit-scrollbar-thumb {
-                    background: rgba(0,0,0,0.28) !important;
+                #accessbit-widget-panel .white-content-section::-webkit-scrollbar-thumb,
+                #accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar-thumb,
+                #accessbit-widget-panel .panel-content::-webkit-scrollbar-thumb {
+                    background: rgba(0,0,0,0.3) !important;
                     border-radius: 4px !important;
                     min-height: 40px !important;
                 }
