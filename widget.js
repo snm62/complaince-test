@@ -6684,14 +6684,14 @@ font-family: Archivo;
                 .accessbit-panel-screenshot .profile-item.ab-toggle-on:not(.font-sizing-on):not(.adjust-line-height-on):not(.adjust-letter-spacing-on):not(.content-scaling-on) .content-card-icon svg circle:first-of-type { fill: #D9F8F0 !important; stroke: #01CE9C !important; stroke-width: 2px !important; }
                 /* Screenshot panel: desktop toggle size only; mobile uses smaller size from @media (max-width: 768px) above */
                 @media (min-width: 769px) {
-                    .accessbit-panel-screenshot .toggle-switch { width: 80px !important; height: 40px !important; }
-                    .accessbit-panel-screenshot .toggle-switch .slider { width: 80px !important; height: 40px !important; border-radius: 99px !important; box-shadow: 0px 1px 3px 0px #00000033 inset !important; }
-                    .accessbit-panel-screenshot .toggle-switch .slider:before { height: 32px !important; width: 32px !important; left: 4px !important; bottom: 4px !important; border-radius: 50% !important; }
+                    .accessbit-panel-screenshot .toggle-switch { width: 64px !important; height: 32px !important; }
+                    .accessbit-panel-screenshot .toggle-switch .slider { width: 64px !important; height: 32px !important; border-radius: 99px !important; box-shadow: 0px 1px 3px 0px #00000033 inset !important; }
+                    .accessbit-panel-screenshot .toggle-switch .slider:before { height: 26px !important; width: 26px !important; left: 3px !important; bottom: 3px !important; border-radius: 50% !important; }
                     .accessbit-panel-screenshot .toggle-switch input:checked + .slider { background-color: #00CE9C !important; }
-                    .accessbit-panel-screenshot .toggle-switch input:checked + .slider:before { transform: translateX(40px) !important; }
+                    .accessbit-panel-screenshot .toggle-switch input:checked + .slider:before { transform: translateX(32px) !important; }
                 }
-                .accessbit-panel-screenshot .toggle-switch input:not(:checked) + .slider::after { content: "" !important; display: block !important; right: 16px !important; top: 50% !important; transform: translateY(-50%) rotate(0deg) !important; width: 12px !important; height: 12px !important; opacity: 1 !important; border-width: 2px !important; border: 2px solid #FFFFFF !important; border-radius: 50% !important; background: transparent !important; transition: none !important; }
-                .accessbit-panel-screenshot .toggle-switch input:checked + .slider::after { content: "" !important; display: block !important; left: 22px !important; right: auto !important; top: 50% !important; transform: translateY(-50%) !important; width: 2px !important; height: 12px !important; background: white !important; border: none !important; border-radius: 0 !important; pointer-events: none !important; transition: none !important; opacity: 1 !important; }
+                .accessbit-panel-screenshot .toggle-switch input:not(:checked) + .slider::after { content: "" !important; display: block !important; right: 12px !important; top: 50% !important; transform: translateY(-50%) rotate(0deg) !important; width: 10px !important; height: 10px !important; opacity: 1 !important; border-width: 2px !important; border: 2px solid #FFFFFF !important; border-radius: 50% !important; background: transparent !important; transition: none !important; }
+                .accessbit-panel-screenshot .toggle-switch input:checked + .slider::after { content: "" !important; display: block !important; left: 18px !important; right: auto !important; top: 50% !important; transform: translateY(-50%) !important; width: 2px !important; height: 10px !important; background: white !important; border: none !important; border-radius: 0 !important; pointer-events: none !important; transition: none !important; opacity: 1 !important; }
                 .accessbit-panel-screenshot .panel-header .header-center { align-items: center !important; padding-left: 0 !important; padding-right: 0 !important; overflow: visible !important; }
                 .accessbit-panel-screenshot .panel-header .header-center h2 {
                     font-family: Archivo;
@@ -11291,9 +11291,12 @@ input:checked + .slider::after {
             panelRoot.appendChild(searchPlaceholder);
             const whiteContentSection = document.createElement('div');
             whiteContentSection.className = 'white-content-section accessbit-hide-scrollbar';
-            whiteContentSection.style.cssText = 'display:flex;flex-direction:column;background:#EAECF2;padding:0;border-radius:0 0 20px 20px;';
-            whiteContentSection.style.setProperty('scrollbar-width', 'none');
-            whiteContentSection.style.setProperty('-ms-overflow-style', 'none');
+            whiteContentSection.style.cssText = 'display:flex;flex-direction:column;background:#EAECF2;padding:0;border-radius:0 0 20px 20px;flex:1 1 auto;min-height:0;';
+            whiteContentSection.style.setProperty('overflow-y', 'auto', 'important');
+            whiteContentSection.style.setProperty('overflow-x', 'hidden', 'important');
+            whiteContentSection.style.setProperty('scrollbar-width', 'thin', 'important');
+            whiteContentSection.style.setProperty('scrollbar-color', 'rgba(0,0,0,0.35) transparent', 'important');
+            whiteContentSection.style.setProperty('-ms-overflow-style', 'auto', 'important');
             const fullPanelHtml = this.getPanelHTML();
             const tempWrap = document.createElement('div');
             tempWrap.innerHTML = fullPanelHtml;
