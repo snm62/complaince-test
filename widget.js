@@ -6585,15 +6585,24 @@ font-family: Archivo;
                     max-width: 100%;
                     box-sizing: border-box;
                 }
-                /* Prevent scrollbar from showing in Accessibility Profiles / white content area */
+                /* Slim visible scrollbar on white content area */
                 .accessbit-panel-screenshot > .white-content-section {
-                    scrollbar-width: none !important;
-                    -ms-overflow-style: none !important;
+                    scrollbar-width: thin !important;
+                    scrollbar-color: rgba(0,0,0,0.3) transparent !important;
+                    -ms-overflow-style: auto !important;
                 }
                 .accessbit-panel-screenshot > .white-content-section::-webkit-scrollbar {
-                    display: none !important;
-                    width: 0 !important;
-                    height: 0 !important;
+                    display: block !important;
+                    width: 4px !important;
+                    background: transparent !important;
+                }
+                .accessbit-panel-screenshot > .white-content-section::-webkit-scrollbar-thumb {
+                    background: rgba(0,0,0,0.3) !important;
+                    border-radius: 4px !important;
+                    min-height: 40px !important;
+                }
+                .accessbit-panel-screenshot > .white-content-section::-webkit-scrollbar-track {
+                    background: transparent !important;
                 }
                 .accessbit-panel-screenshot .white-content-section .profile-item {
                     display: flex !important;
@@ -11293,6 +11302,20 @@ input:checked + .slider::after {
             whiteContentSection.style.setProperty('scrollbar-width', 'thin', 'important');
             whiteContentSection.style.setProperty('scrollbar-color', 'rgba(0,0,0,0.35) transparent', 'important');
             whiteContentSection.style.setProperty('-ms-overflow-style', 'auto', 'important');
+            // DEBUG — remove after confirming scrollbar works
+            setTimeout(() => {
+                const el = whiteContentSection;
+                const cs = window.getComputedStyle(el);
+                console.log('[AccessBit Scrollbar Debug]', {
+                    overflowY: cs.overflowY,
+                    scrollbarWidth: cs.scrollbarWidth,
+                    height: el.offsetHeight,
+                    scrollHeight: el.scrollHeight,
+                    classes: el.className,
+                    inlineOverflowY: el.style.getPropertyValue('overflow-y'),
+                    inlineOverflowYPriority: el.style.getPropertyPriority('overflow-y'),
+                });
+            }, 2000);
             const fullPanelHtml = this.getPanelHTML();
             const tempWrap = document.createElement('div');
             tempWrap.innerHTML = fullPanelHtml;
