@@ -5421,38 +5421,6 @@ font-family: Archivo;
                     -webkit-overflow-scrolling: touch !important;
                     scrollbar-gutter: stable !important;
                 }
-                /* Slim visible scrollbar on content area between header and footer */
-                .accessbit-widget-panel .white-content-section,
-                .accessbit-widget-panel .accessbit-widget-content,
-                .accessbit-widget-panel .panel-content,
-                .accessbit-panel-screenshot {
-                    scrollbar-width: thin !important;
-                    scrollbar-color: rgba(0,0,0,0.28) transparent !important;
-                }
-                .accessbit-widget-panel .white-content-section::-webkit-scrollbar,
-                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar,
-                .accessbit-widget-panel .panel-content::-webkit-scrollbar,
-                .accessbit-panel-screenshot::-webkit-scrollbar {
-                    display: block !important;
-                    width: 4px !important;
-                    height: 4px !important;
-                    visibility: visible !important;
-                    background: transparent !important;
-                }
-                .accessbit-widget-panel .white-content-section::-webkit-scrollbar-track,
-                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar-track,
-                .accessbit-widget-panel .panel-content::-webkit-scrollbar-track,
-                .accessbit-panel-screenshot::-webkit-scrollbar-track {
-                    background: transparent !important;
-                }
-                .accessbit-widget-panel .white-content-section::-webkit-scrollbar-thumb,
-                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar-thumb,
-                .accessbit-widget-panel .panel-content::-webkit-scrollbar-thumb,
-                .accessbit-panel-screenshot::-webkit-scrollbar-thumb {
-                    background: rgba(0,0,0,0.28) !important;
-                    border-radius: 4px !important;
-                    min-height: 40px !important;
-                }
                 /* Reduced panel width on laptop screens */
                 @media (min-width: 1024px) and (max-width: 1439px) {
                     :host { --widget-width: min(380px, 94vw); }
@@ -11035,7 +11003,39 @@ input:checked + .slider::after {
                         transform: translateX(0) !important;
                     }
                 }
-    
+
+                /* SLIM SCROLLBAR — must be last to override all hide-scrollbar rules above */
+                .accessbit-widget-panel .white-content-section,
+                .accessbit-widget-panel .accessbit-widget-content,
+                .accessbit-widget-panel .panel-content,
+                .accessbit-panel-screenshot {
+                    scrollbar-width: thin !important;
+                    scrollbar-color: rgba(0,0,0,0.28) transparent !important;
+                }
+                .accessbit-widget-panel .white-content-section::-webkit-scrollbar,
+                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar,
+                .accessbit-widget-panel .panel-content::-webkit-scrollbar,
+                .accessbit-panel-screenshot::-webkit-scrollbar {
+                    display: block !important;
+                    width: 4px !important;
+                    visibility: visible !important;
+                    background: transparent !important;
+                }
+                .accessbit-widget-panel .white-content-section::-webkit-scrollbar-track,
+                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar-track,
+                .accessbit-widget-panel .panel-content::-webkit-scrollbar-track,
+                .accessbit-panel-screenshot::-webkit-scrollbar-track {
+                    background: transparent !important;
+                }
+                .accessbit-widget-panel .white-content-section::-webkit-scrollbar-thumb,
+                .accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar-thumb,
+                .accessbit-widget-panel .panel-content::-webkit-scrollbar-thumb,
+                .accessbit-panel-screenshot::-webkit-scrollbar-thumb {
+                    background: rgba(0,0,0,0.28) !important;
+                    border-radius: 4px !important;
+                    min-height: 40px !important;
+                }
+
             `;
     
         }
