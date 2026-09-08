@@ -11302,21 +11302,7 @@ input:checked + .slider::after {
             whiteContentSection.style.setProperty('scrollbar-width', 'thin', 'important');
             whiteContentSection.style.setProperty('scrollbar-color', 'rgba(0,0,0,0.35) transparent', 'important');
             whiteContentSection.style.setProperty('-ms-overflow-style', 'auto', 'important');
-            // DEBUG — remove after confirming scrollbar works
-            setTimeout(() => {
-                const el = whiteContentSection;
-                const cs = window.getComputedStyle(el);
-                console.log('[AccessBit Scrollbar Debug]', {
-                    overflowY: cs.overflowY,
-                    scrollbarWidth: cs.scrollbarWidth,
-                    height: el.offsetHeight,
-                    scrollHeight: el.scrollHeight,
-                    classes: el.className,
-                    inlineOverflowY: el.style.getPropertyValue('overflow-y'),
-                    inlineOverflowYPriority: el.style.getPropertyPriority('overflow-y'),
-                });
-            }, 2000);
-            const fullPanelHtml = this.getPanelHTML();
+const fullPanelHtml = this.getPanelHTML();
             const tempWrap = document.createElement('div');
             tempWrap.innerHTML = fullPanelHtml;
             const sectionEl = tempWrap.querySelector('.white-content-section');
