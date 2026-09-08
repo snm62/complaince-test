@@ -8525,8 +8525,8 @@ font-family: Archivo;
                     .toggle-switch {
                         position: relative;
                         display: inline-block;
-                        width: 80px !important;
-                        height: 40px !important;
+                        width: 64px !important;
+                        height: 32px !important;
                         flex-shrink: 0;
                         margin-left: auto;
                         margin-right: 12px;
@@ -8540,9 +8540,9 @@ font-family: Archivo;
                     .accessbit-panel-screenshot .toggle-switch {
                         position: relative;
                         display: inline-block;
-                        width: 80px !important;
-                        height: 40px !important;
-                        min-width: 80px !important;
+                        width: 64px !important;
+                        height: 32px !important;
+                        min-width: 64px !important;
                         flex-shrink: 0;
                         margin-left: auto;
                         margin-right: 12px;
@@ -8550,16 +8550,16 @@ font-family: Archivo;
                     }
                     .accessbit-widget-panel .toggle-switch .slider,
                     .accessbit-panel-screenshot .toggle-switch .slider {
-                        width: 80px !important;
-                        height: 40px !important;
+                        width: 64px !important;
+                        height: 32px !important;
                         border-radius: 99px !important;
                     }
                     .accessbit-widget-panel .toggle-switch .slider:before,
                     .accessbit-panel-screenshot .toggle-switch .slider:before {
-                        width: 32px !important;
-                        height: 32px !important;
-                        left: 4px !important;
-                        bottom: 4px !important;
+                        width: 26px !important;
+                        height: 26px !important;
+                        left: 3px !important;
+                        bottom: 3px !important;
                         border-radius: 50% !important;
                     }
                     .accessbit-widget-panel .toggle-switch input:checked + .slider,
@@ -8569,7 +8569,7 @@ font-family: Archivo;
                     /* Anchor knob like desktop to keep the ~2px gap */
                     .accessbit-widget-panel .toggle-switch input:checked + .slider:before,
                     .accessbit-panel-screenshot .toggle-switch input:checked + .slider:before {
-                        left: calc(100% - 32px - 2px) !important;
+                        left: calc(100% - 26px - 3px) !important;
                         transform: translateX(0) !important;
                     }
 
@@ -8636,11 +8636,11 @@ font-family: Archivo;
                 @media (min-width: 1280px) {
                     #accessbit-widget-panel .toggle-switch,
                     .accessbit-panel-screenshot .toggle-switch {
-                        width: 92px !important;
+                        width: 64px !important;
                     }
                     #accessbit-widget-panel input:checked + .slider:before,
                     .accessbit-panel-screenshot input:checked + .slider:before {
-                        transform: translateX(34px) !important;
+                        transform: translateX(32px) !important;
                     }
                 }
 
@@ -11290,7 +11290,7 @@ input:checked + .slider::after {
             searchPlaceholder.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;';
             panelRoot.appendChild(searchPlaceholder);
             const whiteContentSection = document.createElement('div');
-            whiteContentSection.className = 'white-content-section accessbit-hide-scrollbar';
+            whiteContentSection.className = 'white-content-section';
             whiteContentSection.style.cssText = 'display:flex;flex-direction:column;background:#EAECF2;padding:0;border-radius:0 0 20px 20px;flex:1 1 auto;min-height:0;';
             whiteContentSection.style.setProperty('overflow-y', 'auto', 'important');
             whiteContentSection.style.setProperty('overflow-x', 'hidden', 'important');
