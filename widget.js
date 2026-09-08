@@ -6593,16 +6593,16 @@ font-family: Archivo;
                 }
                 .accessbit-panel-screenshot > .white-content-section::-webkit-scrollbar {
                     display: block !important;
-                    width: 4px !important;
-                    background: transparent !important;
+                    width: 6px !important;
+                    background: rgba(255,0,0,0.15) !important;
                 }
                 .accessbit-panel-screenshot > .white-content-section::-webkit-scrollbar-thumb {
-                    background: rgba(0,0,0,0.3) !important;
+                    background: rgba(255,0,0,0.7) !important;
                     border-radius: 4px !important;
                     min-height: 40px !important;
                 }
                 .accessbit-panel-screenshot > .white-content-section::-webkit-scrollbar-track {
-                    background: transparent !important;
+                    background: rgba(255,0,0,0.1) !important;
                 }
                 .accessbit-panel-screenshot .white-content-section .profile-item {
                     display: flex !important;
@@ -11191,7 +11191,7 @@ input:checked + .slider::after {
             const teal = '#34A2AB';
             const panelRoot = document.createElement('div');
             panelRoot.className = 'accessbit-panel-screenshot accessbit-hide-scrollbar';
-            panelRoot.style.cssText = 'position:relative;display:flex;flex-direction:column;background:#EAECF2;border-radius:20px;overflow:hidden;min-width:0;width:100%;max-width:100%;box-sizing:border-box;box-shadow:0 4px 24px rgba(0,0,0,0.15);';
+            panelRoot.style.cssText = 'position:relative;display:flex;flex-direction:column;background:#EAECF2;border-radius:20px;overflow:hidden;min-width:0;width:100%;max-width:100%;box-sizing:border-box;box-shadow:0 4px 24px rgba(0,0,0,0.15);padding-right:6px;';
             const panelHeader = document.createElement('div');
             panelHeader.className = 'panel-header accessbit-screenshot-header';
             panelHeader.style.cssText = 'position:relative;background:' + teal + ';padding:0 18px 54px 18px;border-radius:20px 20px 0 0;min-height:200px;display:flex;flex-direction:column;align-items:center;padding-top:14px;overflow:hidden;box-sizing:border-box;width:100%;';
