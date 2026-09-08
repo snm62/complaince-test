@@ -11006,7 +11006,7 @@ input:checked + .slider::after {
                 #accessbit-widget-panel .panel-content {
                     scrollbar-width: thin !important;
                     scrollbar-color: rgba(0,0,0,0.3) transparent !important;
-                    overflow-y: auto !important;
+                    overflow-y: scroll !important;
                 }
                 #accessbit-widget-panel .white-content-section::-webkit-scrollbar,
                 #accessbit-widget-panel .accessbit-widget-content::-webkit-scrollbar,
@@ -11288,7 +11288,7 @@ input:checked + .slider::after {
             const whiteContentSection = document.createElement('div');
             whiteContentSection.className = 'white-content-section';
             whiteContentSection.style.cssText = 'display:flex;flex-direction:column;background:#EAECF2;padding:0;border-radius:0 0 20px 20px;flex:1 1 auto;min-height:0;';
-            whiteContentSection.style.setProperty('overflow-y', 'auto', 'important');
+            whiteContentSection.style.setProperty('overflow-y', 'scroll', 'important');
             whiteContentSection.style.setProperty('overflow-x', 'hidden', 'important');
             whiteContentSection.style.setProperty('scrollbar-width', 'thin', 'important');
             whiteContentSection.style.setProperty('scrollbar-color', 'rgba(0,0,0,0.35) transparent', 'important');
