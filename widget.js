@@ -5419,13 +5419,22 @@ font-family: Archivo;
                 }
                 /* Reduced panel width on laptop screens */
                 @media (min-width: 1024px) and (max-width: 1439px) {
-                    :host { --widget-width: min(380px, 94vw); }
+                    :host { --widget-width: min(340px, 94vw); }
                 }
                 @media (min-width: 1440px) and (max-width: 1599px) {
-                    :host { --widget-width: min(400px, 94vw); }
+                    :host { --widget-width: min(360px, 94vw); }
                 }
                 @media (min-width: 1500px) {
-                    :host { --widget-width: min(400px, 94vw); }
+                    :host { --widget-width: min(360px, 94vw); }
+                }
+                /* Laptop screens: trim the empty space under the header action buttons
+                   (Reset Settings / Statement / Hide Interface) where they sit in a row
+                   rather than stacked vertically (stacking only happens at <=768px). */
+                @media (min-width: 1024px) and (max-width: 1599px) {
+                    .panel-header.accessbit-screenshot-header {
+                        padding-bottom: 24px !important;
+                        min-height: auto !important;
+                    }
                 }
 .accessbit-widget-panel .white-content-section .white-content-section {
                     overflow-y: visible !important;
